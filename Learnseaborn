@@ -1,0 +1,16 @@
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+""" Pokemon.csv 需要先用记事本打开并另存为UTF-8编码 """
+df = pd.read_csv("D:\\Pokemon.csv", index_col=0)
+df.head(10)
+
+""" to show Attack-Defense plot in df, remove regression line and set different colors according to Stage """
+sns.lmplot(x="Attack", y="Defense", data=df, fit_reg=False, hue='Stage')
+
+sns.lmplot(x="Attack", y="Defense", data=df, fit_reg=False, hue='Stage')
+
+""" set the range of "x and y" """
+plt.ylim(-100, 150)
+plt.xlim(-50, None)
